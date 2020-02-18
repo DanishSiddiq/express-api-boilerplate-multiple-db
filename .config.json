@@ -1,0 +1,16 @@
+{
+  "API_ENV": "local",
+  "NODE_PORT": "5000",
+  "MONGO_DSN": "mongodb://192.168.99.100:37017/student",
+  "MONGO_OPT": {
+    "poolSize": 5,
+    "useNewUrlParser": true
+  },
+  "RABBITMQ_HOST": "192.168.99.100",
+  "RABBITMQ_PORT": 5772,
+  "RABBITMQ_USERNAME": "crm-user",
+  "RABBITMQ_PASSWORD": "th2jBqXL",
+  "RABBITMQ_VHOST": "/crm",
+  "EMAIL_IDENTIFIER_VALIDITY": 10,
+  "PHONE_IDENTIFIER_VALIDITY": 10
+}

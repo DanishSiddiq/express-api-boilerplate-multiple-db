@@ -1,0 +1,50 @@
+{
+  "name": "express-api-boilerplate",
+  "version": "1.0.0",
+  "description": "express framework based boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon ./index.js",
+    "start": "node ./index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanishSiddiq/express-api-boilerplate.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "framework",
+    "boilerplate"
+  ],
+  "author": "Danish Siddiq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanishSiddiq/express-api-boilerplate/issues"
+  },
+  "homepage": "https://github.com/DanishSiddiq/express-api-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-api-problem": "^1.2.6",
+    "express-async-errors": "^3.1.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.1",
+    "morgan": "^1.9.1",
+    "save": "^2.4.0",
+    "http-status-codes": "^1.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-jest": "24.8.0",
+    "jest": "24.9.0",
+    "jest-cli": "24.8.0",
+    "nodemon": "^1.19.1"
+  }
+}
