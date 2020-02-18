@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 
 // custom
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
+import { initiateRabbitMQ } from './queues/connection/rabbitmq';
 import { logInfoDetails } from './helper/logger';
 import { setRouter } from './route';
 import { config } from './helper/config';
@@ -18,6 +19,14 @@ handleUncaughtErrors();
 handleExit();
 
 const app = express();
+
+// Connect to DB
+if (process.env.NODE_ENV !== 'test') {
+    // await dbService();
+
+    // queue listener
+    // initiateRabbitMQ();
+}
 
 // logger
 app.use(morgan('tiny'));
