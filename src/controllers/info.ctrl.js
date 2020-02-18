@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { logErrDetails } from '../helper/logger';
 import { SERVICE_UNAVAILABLE, OK } from "http-status-codes";
+import { checkHealthMongoDb } from '../database/db.connection';
 
 let version = '';
 
@@ -59,11 +60,11 @@ const getVersion = (req, res) => {
  */
 const checkHealth = async (req, res) => {
   let mongoHealth = null;
-  let redisHealth = null;
+  let redisHealth = true;
   let errorMessage = '';
 
   try {
-    // mongoHealth = await mongoCheckHealth();
+    mongoHealth = await checkHealthMongoDb();
   } catch (error) {
     errorMessage = error.message;
     logErrDetails({ error, message: 'Error Health api: MongoError' });

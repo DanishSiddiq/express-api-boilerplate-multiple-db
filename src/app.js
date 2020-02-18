@@ -5,46 +5,59 @@ import bodyParser from 'body-parser';
 
 // custom
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
-import { initiateRabbitMQ } from './queues/connection/rabbitmq';
-import { logInfoDetails } from './helper/logger';
+import { logInfoDetails, logErrDetails } from './helper/logger';
 import { setRouter } from './route';
 import { config } from './helper/config';
+import { setupConnection } from './database/db.connection';
+import { initiateRabbitMQ } from './queues/connection/rabbitmq';
 
 // middlewares
 import { ConfigLoaderMiddleware } from './middlewares/config-loader';
 import { RouteNotFoundMiddleware } from './middlewares/not-found';
 import { ExceptionHandlerMiddleware } from './middlewares/exception-handler';
 
-handleUncaughtErrors();
-handleExit();
-
 const app = express();
 
-// Connect to DB
-if (process.env.NODE_ENV !== 'test') {
-    // await dbService();
+(async function() {
+    try {
 
-    // queue listener
-    // initiateRabbitMQ();
-}
+        handleUncaughtErrors();
+        handleExit();
 
-// logger
-app.use(morgan('tiny'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ limit: '5mb' }));
+        // Connect to multiple DB's
+        if (process.env.NODE_ENV !== 'test') {
 
-// defining routes inside router or further distribution based on modules
-app.use('/', ConfigLoaderMiddleware, setRouter(app));
+            // setup multiple connections
+            setupConnection();
 
-// RouteNotFound and ExceptionHandler middlewares must
-// be the last ones to be registered
-app.use(RouteNotFoundMiddleware);
-app.use(ExceptionHandlerMiddleware);
+            // queue listener
+            // initiateRabbitMQ();
+        }
 
-app.server = http.createServer(app);
-const APP_PORT = config.get('NODE_PORT', 3000);
-app.server.listen(APP_PORT, () => {
-    logInfoDetails({ message: 'Express boilerplate app listening on port:', additionalData: { APP_PORT } });
-});
+        // logger
+        app.use(morgan('tiny'));
+        app.use(bodyParser.urlencoded({extended: true}));
+        app.use(bodyParser.json({limit: '5mb'}));
+
+        // defining routes inside router or further distribution based on modules
+        app.use('/', ConfigLoaderMiddleware, setRouter(app));
+
+
+        // RouteNotFound and ExceptionHandler middlewares must
+        // be the last ones to be registered
+        app.use(RouteNotFoundMiddleware);
+        app.use(ExceptionHandlerMiddleware);
+
+        app.server = http.createServer(app);
+        const APP_PORT = config.get('NODE_PORT', 3000);
+        app.server.listen(APP_PORT, () => {
+            logInfoDetails({message: 'Express boilerplate app listening on port:', additionalData: {APP_PORT}});
+        });
+    } catch (err) {
+        logErrDetails({ message: 'Express boilerplate server setup failed', error: err });
+        process.exit(1);
+    }
+})();
+
 module.exports = app;
 
