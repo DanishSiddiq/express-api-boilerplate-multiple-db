@@ -1,2 +1,5 @@
-# express-api--boilerplate
-express framework basic functionalities
+# express-api-boilerplate
+Server setup with express framework basic features
+
+
+**IN PROGRESS**
