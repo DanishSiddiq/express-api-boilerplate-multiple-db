@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import healthCheckRoutes from './health-check';
 import studentRoutes from './student';
+import rewardsRoutes from './rewards';
 
 const router = Router();
 
@@ -15,8 +16,8 @@ const setRouter = (app) => {
   app.use(healthCheckRoutes);
 
   // version for all other endpoints
-  app.use('/api/v1', router);
-  app.use(studentRoutes);
+  app.use('/api/v1', studentRoutes);
+  app.use('/api/v1', rewardsRoutes);
 
   return router;
 };

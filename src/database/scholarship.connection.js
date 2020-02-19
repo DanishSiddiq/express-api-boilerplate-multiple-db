@@ -31,7 +31,7 @@ const connectDatabase = (dbName) => {
 
 const getRewardsModel = () => {
     // defining models based on schema for multiple connections
-    return scholarshipConnection.model('student', rewardsSchema, 'student');
+    return scholarshipConnection.model('rewards', rewardsSchema, 'rewards');
 };
 
 module.exports = {
