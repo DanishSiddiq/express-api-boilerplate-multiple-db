@@ -3,15 +3,14 @@ import http from 'http';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
-// custom
 // import { initiateRabbitMQ } from './queues/connection/rabbitmq';
-import { setupConnection } from './database/db.connection';
+import { setupConnection } from './database-connections/db.connection';
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
 import { logInfoDetails, logErrDetails } from './helper/logger';
 import { setRouter } from './route';
 import { config } from './helper/config';
 
-// middlewares
+// middle-wares
 import { ConfigLoaderMiddleware } from './middlewares/config-loader';
 import { RouteNotFoundMiddleware } from './middlewares/not-found';
 import { ExceptionHandlerMiddleware } from './middlewares/exception-handler';
@@ -27,11 +26,8 @@ const app = express();
         // Connect to multiple DB's
         if (process.env.NODE_ENV !== 'test') {
 
-            setupConnection();
-            // const scholarshipConnection = setupConnection('SCHOLARSHIP');
-
             // setup multiple connections
-            // await setupConnection();
+            setupConnection();
 
             // queue listener
             // initiateRabbitMQ();
@@ -46,7 +42,7 @@ const app = express();
         app.use('/', ConfigLoaderMiddleware, setRouter(app));
 
 
-        // RouteNotFound and ExceptionHandler middlewares must
+        // RouteNotFound and ExceptionHandler middle-wares must
         // be the last ones to be registered
         app.use(RouteNotFoundMiddleware);
         app.use(ExceptionHandlerMiddleware);

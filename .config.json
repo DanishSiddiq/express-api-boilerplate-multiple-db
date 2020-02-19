@@ -1,8 +1,8 @@
 {
   "API_ENV": "local",
   "NODE_PORT": "5001",
-  "MONGO_DSN_STUDENT": "mongodb://192.168.99.100:37017/student_enrollment",
-  "MONGO_OPT_STUDENT": {
+  "MONGO_DSN_DCS": "mongodb://192.168.99.100:37017/dcs",
+  "MONGO_OPT_DCS": {
     "poolSize": 5,
     "useNewUrlParser": true
   },

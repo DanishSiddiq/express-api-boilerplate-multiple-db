@@ -1,4 +1,4 @@
-import { getRewardsModel } from '../database/scholarship.connection';
+import { getScholarshipConnection } from '../database-connections/db.connection';
 import Repository from '../models/data-access/repository';
 
 /**
@@ -7,7 +7,7 @@ import Repository from '../models/data-access/repository';
  * @returns {Promise<document>}
  */
 const createOne = async (data) => {
-    const rewardsModel  = getRewardsModel();
+    const rewardsModel  = getScholarshipConnection().rewardsModel;
     const repository    = new Repository(rewardsModel);
     return repository.createOne(data);
 };
