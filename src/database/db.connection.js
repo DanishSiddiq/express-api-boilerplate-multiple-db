@@ -1,40 +1,23 @@
-import { dbService } from './mongo.db';
-import { config } from '../helper/config';
 import { MONGO_CONNECTED } from '../constants/info-constants';
-import { logInfoDetails } from '../helper/logger';
+import { setupStudentConnection } from  './student.connection';
+import { setupScholarshipConnection } from  './scholarship.connection';
 
 let studentConnection;
 let scholarshipConnection;
 
 /**
  *
- * @returns {Promise<void>}
  */
-const setupConnection = async () => {
-  let label = 'STUDENT';
+const setupConnection = () => {
+
+  // student
   if(!studentConnection || (studentConnection && !studentConnection.readyState)) {
-    studentConnection = await connectDatabase(label);
-    logInfoDetails({ message: `${label} database connected` });
+    studentConnection = setupStudentConnection('STUDENT');
   }
-
-  label = 'SCHOLARSHIP';
-  if(!scholarshipConnection || (scholarshipConnection && !scholarshipConnection.readyState)) {
-    scholarshipConnection =    await connectDatabase(label);
-    logInfoDetails({ message: `${label} database connected` });
-  }
-};
-
-/**
- *
- * @param dbName
- * @returns {Promise<*>}
- */
-const connectDatabase = async (dbName) => {
-  const mongoOptions = config.get(`MONGO_OPT_${dbName}`, { poolSize: 5, useNewUrlParser: true });
-  const mongoOpt = typeof mongoOptions === 'string' ? JSON.parse(mongoOptions) : mongoOptions;
-  const mongoURI = config.get(`MONGO_DSN_${dbName}`, '');
-
-  return dbService(mongoURI, mongoOpt, dbName);
+    // scholarship
+    if (!scholarshipConnection || (scholarshipConnection && !scholarshipConnection.readyState)) {
+      studentConnection = setupScholarshipConnection('SCHOLARSHIP');
+    }
 };
 
 /**
@@ -54,4 +37,16 @@ const checkHealthMongoDb = async () => {
   return null;
 };
 
-module.exports = { setupConnection, checkHealthMongoDb, studentConnection, scholarshipConnection };
+/**
+ *
+ * @returns {*}
+ */
+const getStudentConnection = () => studentConnection;
+
+/**
+ *
+ * @returns {*}
+ */
+const getScholarConnection = () => scholarshipConnection;
+
+module.exports = { setupConnection, checkHealthMongoDb, getStudentConnection, getScholarConnection };

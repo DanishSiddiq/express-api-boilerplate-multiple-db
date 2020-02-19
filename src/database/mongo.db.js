@@ -8,7 +8,7 @@ import { logErrDetails, logInfoDetails } from '../helper/logger';
  * @var {string} dsn
  * @var {{}} options
  */
-export const dbService = async (mongoDsn, options, label = 'Mongo') => {
+export const dbService = (mongoDsn, options, label = 'Mongo') => {
   mongoose.Promise = global.Promise;
   mongoose.set('useCreateIndex', true);
   mongoose.set('useFindAndModify', false);

@@ -4,12 +4,12 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
 // custom
+// import { initiateRabbitMQ } from './queues/connection/rabbitmq';
+import { setupConnection } from './database/db.connection';
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
 import { logInfoDetails, logErrDetails } from './helper/logger';
 import { setRouter } from './route';
 import { config } from './helper/config';
-import { setupConnection } from './database/db.connection';
-import { initiateRabbitMQ } from './queues/connection/rabbitmq';
 
 // middlewares
 import { ConfigLoaderMiddleware } from './middlewares/config-loader';
@@ -27,8 +27,11 @@ const app = express();
         // Connect to multiple DB's
         if (process.env.NODE_ENV !== 'test') {
 
-            // setup multiple connections
             setupConnection();
+            // const scholarshipConnection = setupConnection('SCHOLARSHIP');
+
+            // setup multiple connections
+            // await setupConnection();
 
             // queue listener
             // initiateRabbitMQ();
@@ -58,6 +61,8 @@ const app = express();
         process.exit(1);
     }
 })();
+
+
 
 module.exports = app;
 

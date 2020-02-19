@@ -1,6 +1,6 @@
 {
   "API_ENV": "local",
-  "NODE_PORT": "5000",
+  "NODE_PORT": "5001",
   "MONGO_DSN_STUDENT": "mongodb://192.168.99.100:37017/student_enrollment",
   "MONGO_OPT_STUDENT": {
     "poolSize": 5,
