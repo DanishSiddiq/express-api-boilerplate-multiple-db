@@ -1,13 +1,20 @@
 import express from 'express';
 import http from 'http';
 import morgan from 'morgan';
+import helmet from 'helmet';
+import 'express-async-errors';
 import bodyParser from 'body-parser';
 
 // import { initiateRabbitMQ } from './queues/connection/rabbitmq';
 import { setupConnection } from './database-connections/db.connection';
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
 import { logInfoDetails, logErrDetails } from './helper/logger';
-import { setRouter } from './route';
+
+// routers file
+import routerHealth from './route/health-check';
+import routerStudent from './route/v1/student';
+import routerRewards from './route/v1/rewards';
+
 import { config } from './helper/config';
 
 // middle-wares
@@ -33,14 +40,19 @@ const app = express();
             // initiateRabbitMQ();
         }
 
+        // helmet for security purpose
+        app.use(helmet());
+        app.disable('x-powered-by');
+
         // logger
         app.use(morgan('tiny'));
-        app.use(bodyParser.urlencoded({extended: true}));
-        app.use(bodyParser.json({limit: '5mb'}));
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json({ limit: '5mb' }));
 
         // defining routes inside router or further distribution based on modules
-        app.use('/', ConfigLoaderMiddleware, setRouter(app));
-
+        app.use('/', routerHealth);
+        app.use('/', ConfigLoaderMiddleware, routerStudent);
+        app.use('/', ConfigLoaderMiddleware, routerRewards);
 
         // RouteNotFound and ExceptionHandler middle-wares must
         // be the last ones to be registered

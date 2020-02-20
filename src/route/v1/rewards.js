@@ -1,8 +1,7 @@
-import express from 'express';
+import { Router } from 'express';
 import rewardsController from '../../controllers/rewards.ctrl';
 
-const router = express.Router();
-
-router.post('/rewards', rewardsController.createOne);
+const router = Router();
+router.post('/api/v1/rewards', rewardsController.createOne);
 
 module.exports = router;

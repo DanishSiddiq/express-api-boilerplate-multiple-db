@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="75552b02-804d-487f-82e8-92909ae09d38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/rewards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/v1/rewards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/v1/student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/student.ctrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/student.ctrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/exception-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/exception-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/student/student-schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/student/student-schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/health-check.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/health-check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/v1/rewards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/v1/rewards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/v1/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/v1/student.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,37 +32,88 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.config.json">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="409">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/route/index.js">
+        <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="605">
+              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#252#323#0" expanded="true" />
+                <element signature="e#473#521#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/route/v1/rewards.js">
+        <entry file="file://$PROJECT_DIR$/src/route/health-check.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="234">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/route/v1/student.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+              <folding>
+                <element signature="e#1#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/student.ctrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+              <folding>
+                <element signature="e#114#189#0" />
+                <element signature="e#425#501#0" />
+                <element signature="e#829#905#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/student-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+                <element signature="e#191#248#0" />
+                <element signature="e#464#542#0" />
+                <element signature="e#813#932#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/route/v1/student.js">
+        <entry file="file://$PROJECT_DIR$/src/models/data-access/repository.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="294">
+              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+              <folding>
+                <element signature="n#!!doc;n#createOne#0;n#Repository#0" />
+                <element signature="n#!!doc;n#updateOne#0;n#Repository#0" />
+                <element signature="n#!!doc;n#findOne#0;n#Repository#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,6 +136,9 @@
       <find>MONGODB_OPT_</find>
       <find>amqp</find>
       <find>../database/db.connection'</find>
+      <find>ExceptionHandlerMiddleware</find>
+      <find>x-powered-by</find>
+      <find>console.log</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -94,9 +155,7 @@
         <option value="$PROJECT_DIR$/src/helper/logger.js" />
         <option value="$PROJECT_DIR$/src/middlewares/config-loader.js" />
         <option value="$PROJECT_DIR$/src/middlewares/not-found.js" />
-        <option value="$PROJECT_DIR$/src/route/health-check.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/middlewares/exception-handler.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/connection/rabbitmq.js" />
         <option value="$PROJECT_DIR$/src/queues/consumer/student_enrolled.js" />
@@ -112,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/controllers/student-controller.js" />
         <option value="$PROJECT_DIR$/src/route/student.js" />
         <option value="$PROJECT_DIR$/src/database/mongo.db.js" />
-        <option value="$PROJECT_DIR$/src/controllers/student.ctrl.js" />
         <option value="$PROJECT_DIR$/src/models/scholarship/rewards-model.js" />
         <option value="$PROJECT_DIR$/src/database/student.db.connection.js" />
         <option value="$PROJECT_DIR$/src/database/rewards.connection.js" />
@@ -126,16 +184,21 @@
         <option value="$PROJECT_DIR$/src/database-connections/student.connections.js" />
         <option value="$PROJECT_DIR$/.config.json" />
         <option value="$PROJECT_DIR$/src/database-connections/scholarship.connections.js" />
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/constants/info-constants.js" />
-        <option value="$PROJECT_DIR$/src/services/student-service.js" />
         <option value="$PROJECT_DIR$/src/database-connections/db.connection.js" />
         <option value="$PROJECT_DIR$/src/database-connections/student.connection.js" />
         <option value="$PROJECT_DIR$/src/database-connections/scholarship.connection.js" />
         <option value="$PROJECT_DIR$/src/services/rewards-service.js" />
-        <option value="$PROJECT_DIR$/src/route/index.js" />
+        <option value="$PROJECT_DIR$/src/models/student/student-schema.js" />
         <option value="$PROJECT_DIR$/src/route/v1/rewards.js" />
+        <option value="$PROJECT_DIR$/src/middlewares/exception-handler.js" />
+        <option value="$PROJECT_DIR$/src/services/student-service.js" />
+        <option value="$PROJECT_DIR$/src/route/index.js" />
+        <option value="$PROJECT_DIR$/src/route/health-check.js" />
         <option value="$PROJECT_DIR$/src/route/v1/student.js" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/controllers/student.ctrl.js" />
+        <option value="$PROJECT_DIR$/src/models/data-access/repository.js" />
       </list>
     </option>
   </component>
@@ -168,6 +231,26 @@
               <item name="express-api-boilerplate" type="b2602c69:ProjectViewProjectNode" />
               <item name="express-api-boilerplate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="express-api-boilerplate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="express-api-boilerplate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="express-api-boilerplate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="express-api-boilerplate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="scholarship" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="express-api-boilerplate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="express-api-boilerplate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="express-api-boilerplate" type="b2602c69:ProjectViewProjectNode" />
@@ -211,6 +294,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/route/v1" />
+      <recent name="$PROJECT_DIR$/src/route" />
       <recent name="$PROJECT_DIR$/src/models/student" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/queues" />
@@ -282,7 +366,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35901000" />
+    <option name="totallyTimeSpent" value="44010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-242" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -293,7 +377,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.15797788" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.49518073" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.4950495" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -368,23 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/middlewares/not-found.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.config.override.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -444,16 +511,6 @@
     <entry file="file://$PROJECT_DIR$/src/helper/info.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/route/health-check.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -475,87 +532,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/fatal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="n#!!doc;n#handleUncaughtErrors#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/middlewares/exception-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="n#!!doc;n#ExceptionHandlerMiddleware#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/student/student-schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/student.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="17" lean-forward="true" selection-end-line="52" />
-          <folding>
-            <element signature="e#114#190#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/rewards.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
           <folding>
             <element signature="e#114#189#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#201#272#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database-connections/mongo.db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#100#249#0" />
           </folding>
         </state>
       </provider>
@@ -567,36 +549,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database-connections/student.connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="n#!!doc;n#StudentConnection#0" />
-            <element signature="n#!!block;n#constructor#0;n#StudentConnection#0" />
-            <element signature="e#478#962#0" />
-            <element signature="e#1141#1601#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/info-constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database-connections/scholarship.connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="n#!!doc;n#ScholarshipConnection#0" />
-            <element signature="n#!!block;n#constructor#0;n#ScholarshipConnection#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -625,42 +581,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/data-access/repository.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express-api-problem/mongoose-validator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="52">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/fatal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
-            <element signature="n#!!doc;n#createOne#0;n#Repository#0" />
-            <element signature="n#!!doc;n#updateOne#0;n#Repository#0" />
-            <element signature="n#!!doc;n#findOne#0;n#Repository#0" />
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="n#!!doc;n#handleUncaughtErrors#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/scholarship/rewards-schema.js">
+    <entry file="file://$PROJECT_DIR$/src/middlewares/not-found.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="286">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/student-service.js">
+    <entry file="file://$PROJECT_DIR$/src/database-connections/mongo.db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        <state relative-caret-position="104">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="e#0#73#0" expanded="true" />
-            <element signature="e#191#248#0" />
-            <element signature="e#464#542#0" />
-            <element signature="e#813#932#0" />
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#100#249#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database-connections/student.connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <element signature="n#!!doc;n#StudentConnection#0" />
+            <element signature="n#!!block;n#constructor#0;n#StudentConnection#0" />
+            <element signature="e#1141#1601#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database-connections/scholarship.connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <element signature="n#!!doc;n#ScholarshipConnection#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database-connections/db.connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        <state relative-caret-position="104">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="17" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
             <element signature="e#228#238#0" />
@@ -671,24 +665,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/route/index.js">
+    <entry file="file://$PROJECT_DIR$/src/route/v1/rewards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="182">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#1#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/route/v1/rewards.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="409">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/middlewares/exception-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <element signature="n#!!doc;n#ExceptionHandlerMiddleware#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/scholarship/rewards-schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/route/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/route/health-check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/route/v1/student.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="104">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding>
+            <element signature="e#1#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/student/student-schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#252#323#0" expanded="true" />
+            <element signature="e#473#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/student.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding>
+            <element signature="e#114#189#0" />
+            <element signature="e#425#501#0" />
+            <element signature="e#829#905#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/student-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#191#248#0" />
+            <element signature="e#464#542#0" />
+            <element signature="e#813#932#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/data-access/repository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc;n#createOne#0;n#Repository#0" />
+            <element signature="n#!!doc;n#updateOne#0;n#Repository#0" />
+            <element signature="n#!!doc;n#findOne#0;n#Repository#0" />
+          </folding>
         </state>
       </provider>
     </entry>

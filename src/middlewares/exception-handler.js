@@ -14,6 +14,7 @@ import cmn  from '../helper/common';
  * @constructor
  */
 export function ExceptionHandlerMiddleware(err, req, res, next) {
+
   // Continue if it is not an error
   if (!(err instanceof ApiProblem) && !(err instanceof Error)) {
     return next();

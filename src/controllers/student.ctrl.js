@@ -12,7 +12,6 @@ const createOne = async (request, response) => {
         const document = await studentService.createOne(request.body);
         response.status(HttpStatus.CREATED).json(document);
     } catch (e) {
-        console.log(e);
         throw e;
     }
 };
@@ -20,14 +19,14 @@ const createOne = async (request, response) => {
 /**
  *
  * @param request
- * @param reply
+ * @param response
+ * @returns {Promise<void>}
  */
-const updateOne = async (request, reply) => {
+const updateOne = async (request, response) => {
     try {
         const result = await studentService.updateOne(request.params, request.query);
-        reply.code(result.nModified ? HttpStatus.OK : HttpStatus.BAD_REQUEST).send(result.nModified === 1 ? { status: "ok" } : {});
+        response.status(result.nModified ? HttpStatus.OK : HttpStatus.BAD_REQUEST).json(result.nModified === 1 ? { status: "ok" } : {});
     } catch (e) {
-        request.log.error(e);
         throw e;
     }
 };
@@ -35,15 +34,15 @@ const updateOne = async (request, reply) => {
 /**
  *
  * @param request
- * @param reply
+ * @param response
+ * @returns {Promise<void>}
  */
-const findOne = async (request, reply) => {
+const findOne = async (request, response) => {
     try {
         const requestParams = { ...request.body, ...request.query, ...request.params };
         const document = await studentService.findOne(requestParams);
-        reply.code(document ? HttpStatus.OK : HttpStatus.BAD_REQUEST).send(document || {});
+        response.status(document ? HttpStatus.OK : HttpStatus.BAD_REQUEST).json(document || {});
     } catch (e) {
-        request.log.error(e);
         throw e;
     }
 };
