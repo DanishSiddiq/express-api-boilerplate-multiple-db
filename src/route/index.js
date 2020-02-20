@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import healthCheckRoutes from './health-check';
-import studentRoutes from './student';
-import rewardsRoutes from './rewards';
+import studentRoutes from './v1/student';
+import rewardsRoutes from './v1/rewards';
 
 const router = Router();
 
