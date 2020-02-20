@@ -18,9 +18,9 @@ import routerRewards from './route/v1/rewards';
 import { config } from './helper/config';
 
 // middle-wares
-import { ConfigLoaderMiddleware } from './middlewares/config-loader';
-import { RouteNotFoundMiddleware } from './middlewares/not-found';
-import { ExceptionHandlerMiddleware } from './middlewares/exception-handler';
+import ConfigLoaderMiddleware from './middlewares/config-loader';
+import RouteNotFoundMiddleware from './middlewares/not-found';
+import ExceptionHandlerMiddleware from './middlewares/exception-handler';
 
 const app = express();
 

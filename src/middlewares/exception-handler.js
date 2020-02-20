@@ -13,7 +13,7 @@ import cmn  from '../helper/common';
  * @return {module.exports}
  * @constructor
  */
-export function ExceptionHandlerMiddleware(err, req, res, next) {
+const ExceptionHandlerMiddleware = (err, req, res, next) => {
 
   // Continue if it is not an error
   if (!(err instanceof ApiProblem) && !(err instanceof Error)) {
@@ -41,4 +41,6 @@ export function ExceptionHandlerMiddleware(err, req, res, next) {
   logErrDetails({ message: 'Error handled in middleware' , error: err, additionalData });
 
   return res.status(err.status || INTERNAL_SERVER_ERROR).json(formattedResponse);
-}
+};
+
+module.exports = ExceptionHandlerMiddleware;

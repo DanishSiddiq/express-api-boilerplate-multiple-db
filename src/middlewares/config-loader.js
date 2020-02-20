@@ -9,7 +9,7 @@ import { FORBIDDEN } from "http-status-codes";
  * @param next
  * @constructor
  */
-export function ConfigLoaderMiddleware(req, res, next) {
+const ConfigLoaderMiddleware = (req, res, next) => {
   /** @type {{ apiKey }} */
   const params = {
     ...req.body,
@@ -26,4 +26,6 @@ export function ConfigLoaderMiddleware(req, res, next) {
   }
 
   next();
-}
+};
+
+module.exports = ConfigLoaderMiddleware;

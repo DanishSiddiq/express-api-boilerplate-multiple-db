@@ -9,6 +9,8 @@ import { NOT_FOUND } from "http-status-codes";
  * @param err
  * @constructor
  */
-export function RouteNotFoundMiddleware(req, res, err) {
+const RouteNotFoundMiddleware = (req, res, err) => {
   throw new ApiProblem(NOT_FOUND, 'Route not found');
-}
+};
+
+module.exports = RouteNotFoundMiddleware;
