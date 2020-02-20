@@ -1,4 +1,5 @@
 import { getDCSConnection } from '../database-connections/db.connection';
+import { MODEL_DCS } from '../constants/info-constants';
 import Repository from '../models/data-access/repository';
 
 /**
@@ -7,7 +8,7 @@ import Repository from '../models/data-access/repository';
  * @returns {Promise<document>}
  */
 const createOne = async (data) => {
-    const studentModel  = getDCSConnection().studentModel;
+    const studentModel  = await getDCSConnection().getModel(MODEL_DCS.STUDENT);
     const repository    = new Repository(studentModel);
     return repository.createOne(data);
 };
@@ -19,8 +20,8 @@ const createOne = async (data) => {
  * @returns {Promise<Query|*>}
  */
 const updateOne = async (whereClause, data) => {
-    const studentModel  = getDCSConnection().studentModel;
-    const repository = new Repository(studentModel);
+    const studentModel  = await getDCSConnection().getModel(MODEL_DCS.STUDENT);
+    const repository    = new Repository(studentModel);
     return repository.updateOne({ ...whereClause, _id: whereClause._id }, data);
 };
 
@@ -31,8 +32,8 @@ const updateOne = async (whereClause, data) => {
  * @returns {Promise<Promise<*>|Query|void|Promise<*|undefined>>}
  */
 const findOne = async (whereClause, projection = {}) => {
-    const studentModel  = getDCSConnection().studentModel;
-    const repository = new Repository(studentModel);
+    const studentModel  = await getDCSConnection().getModel(MODEL_DCS.STUDENT);
+    const repository    = new Repository(studentModel);
     return repository.findOne({ ...whereClause, _id: whereClause._id }, projection);
 };
 

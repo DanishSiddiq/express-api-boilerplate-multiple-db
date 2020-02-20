@@ -7,18 +7,6 @@ let connectionScholarship;
 
 /**
  *
- * @returns {*}
- */
-const getDCSConnection = () => connectionDCS;
-
-/**
- *
- * @returns {*}
- */
-const getScholarshipConnection = () => connectionScholarship;
-
-/**
- *
  */
 const setupConnection = async () => {
 
@@ -31,7 +19,6 @@ const setupConnection = async () => {
   if (!connectionDCS.connection || (connectionDCS.connection && !connectionDCS.connection.readyState)){
     await connectionDCS.setupConnection();
   }
-
 
   // scholarships
   if(!connectionScholarship){
@@ -46,6 +33,18 @@ const setupConnection = async () => {
 
 /**
  *
+ * @returns {*}
+ */
+const getDCSConnection = () => connectionDCS;
+
+/**
+ *
+ * @returns {*}
+ */
+const getScholarshipConnection = () => connectionScholarship;
+
+/**
+ *
  * @returns {Promise<string|null>}
  */
 const checkHealthMongoDb = async () => {
@@ -54,7 +53,7 @@ const checkHealthMongoDb = async () => {
     return MONGO_CONNECTED;
   }
 
-  // request new connection before leaving so next time health will have a ready connection
+  // reconnect before leaving so next time health will have a ready connection
   setupConnection();
 
   // returns null since connection opening might will take time in async mode

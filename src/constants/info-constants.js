@@ -6,4 +6,10 @@ module.exports = {
   RABBIT_QUEUE_CONNECTED: 'RabbitQM Connected',
   RABBIT_QUEUE_DISCONNECTED: 'RabbitQM connection closed!',
   RABBIT_QUEUE_CONNECTION_ERROR: 'Error while connecting to RabbitMQ',
+  MODEL_DCS: {
+    STUDENT: 'student',
+  },
+  MODEL_SCHOLARSHIP: {
+    REWARDS: 'rewards',
+  }
 };
