@@ -61,7 +61,16 @@ const checkHealthMongoDb = async () => {
  * @param dbName
  * @returns {null|number|IDBDatabase|DbDepartment|DbScholarship}
  */
-const getDB = (dbName) => databases[dbName].db;
+const getDB = (dbName) => {
+  if(databases[dbName].db){
+    return databases[dbName].db;
+  }
+
+  // if database was not setup in server setup
+  setupConnection();
+
+  return null;
+};
 
 module.exports = {
   setupConnection,
