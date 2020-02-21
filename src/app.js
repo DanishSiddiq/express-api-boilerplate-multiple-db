@@ -6,7 +6,7 @@ import 'express-async-errors';
 import bodyParser from 'body-parser';
 
 // import { initiateRabbitMQ } from './queues/connection/rabbitmq';
-import { setupConnection } from './database-connections/db.connection';
+import { setupConnection } from './database-connections/connection.db';
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
 import { logInfoDetails, logErrDetails } from './helper/logger';
 

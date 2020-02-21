@@ -1,6 +1,6 @@
 import { MONGO_CONNECTED } from '../constants/info-constants';
-import StudentConnection from  './student.connection';
-import ScholarshipConnection from './scholarship.connection';
+import ConnectionDepartment from  './connection.department';
+import ConnectionScholarship from './connection.scholarship';
 
 let connectionDCS;
 let connectionScholarship;
@@ -12,7 +12,7 @@ const setupConnection = async () => {
 
   // student
   if(!connectionDCS){
-    connectionDCS = new StudentConnection('DCS');
+    connectionDCS = new ConnectionDepartment('DCS');
   }
 
   // checking connection is alive
@@ -22,7 +22,7 @@ const setupConnection = async () => {
 
   // scholarships
   if(!connectionScholarship){
-    connectionScholarship = new ScholarshipConnection('SCHOLARSHIP');
+    connectionScholarship = new ConnectionScholarship('SCHOLARSHIP');
   }
 
   // checking connection is alive
@@ -35,21 +35,32 @@ const setupConnection = async () => {
  *
  * @returns {*}
  */
-const getDCSConnection = () => connectionDCS;
+const getConnectionDCS = () => connectionDCS;
 
 /**
  *
  * @returns {*}
  */
-const getScholarshipConnection = () => connectionScholarship;
+const getConnectionScholarship = () => connectionScholarship;
+
+/**
+ *
+ * @returns {*}
+ */
+const checkConnectionHealthDCS = () => (connectionDCS && connectionDCS.connection.readyState);
+
+/**
+ *
+ * @returns {*}
+ */
+const checkConnectionHealthScholarship = () => (connectionScholarship && connectionScholarship.connection.readyState);
 
 /**
  *
  * @returns {Promise<string|null>}
  */
 const checkHealthMongoDb = async () => {
-  if((connectionDCS && connectionDCS.connection.readyState)
-     && (connectionScholarship && connectionScholarship.connection.readyState)) {
+  if(checkConnectionHealthDCS() && checkConnectionHealthScholarship()) {
     return MONGO_CONNECTED;
   }
 
@@ -60,4 +71,9 @@ const checkHealthMongoDb = async () => {
   return null;
 };
 
-module.exports = { setupConnection, checkHealthMongoDb, getDCSConnection, getScholarshipConnection };
+module.exports = {
+  setupConnection,
+  checkHealthMongoDb,
+  getConnectionDCS,
+  getConnectionScholarship
+};

@@ -1,13 +1,13 @@
 import { config } from '../helper/config';
 import { logInfoDetails } from '../helper/logger';
-import { dbService } from './mongo.db';
+import { dbService } from './db.mongo';
 import { rewardsSchema } from '../models/scholarship/rewards-schema';
 import { MODEL_SCHOLARSHIP } from '../constants/info-constants';
 
 /**
  *
  */
-class ScholarshipConnection {
+class ConnectionScholarship {
 
     constructor(dbName) {
         this.dbName = dbName;
@@ -57,4 +57,4 @@ class ScholarshipConnection {
 
 }
 
-module.exports = ScholarshipConnection;
+module.exports = ConnectionScholarship;

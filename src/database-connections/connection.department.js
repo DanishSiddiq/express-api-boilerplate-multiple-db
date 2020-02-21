@@ -1,13 +1,13 @@
 import { config } from '../helper/config';
 import { logInfoDetails } from '../helper/logger';
-import { dbService } from './mongo.db';
+import { dbService } from './db.mongo';
 import { studentSchema } from '../models/student/student-schema';
 import { MODEL_DCS } from '../constants/info-constants';
 
 /**
  *
  */
-class StudentConnection {
+class ConnectionDepartment {
 
     constructor(dbName) {
         this.dbName = dbName;
@@ -54,4 +54,4 @@ class StudentConnection {
     };
 }
 
-module.exports = StudentConnection;
+module.exports = ConnectionDepartment;
