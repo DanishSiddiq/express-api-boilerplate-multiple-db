@@ -1,20 +1,20 @@
 import { config } from '../helper/config';
 import { logInfoDetails } from '../helper/logger';
 import { dbService } from './db.mongo';
-import { studentSchema } from '../models/student/student-schema';
-import { MODEL_DCS } from '../constants/info-constants';
+import { rewardsSchema } from '../models/scholarship/rewards-schema';
+import { MODEL_SCHOLARSHIP } from '../constants/info-constants';
 
 /**
  *
  */
-class ConnectionDepartment {
+class DbScholarship {
 
     constructor(dbName) {
         this.dbName = dbName;
         this.connection = null;
 
         // models
-        this.studentModel = null;
+        this.rewardsModel = null;
     }
 
     setupConnection = async () => {
@@ -23,14 +23,16 @@ class ConnectionDepartment {
         const mongoOpt      = typeof mongoOptions === 'string' ? JSON.parse(mongoOptions) : mongoOptions;
         const mongoURI      = config.get(`MONGO_DSN_${this.dbName}`, '');
 
+        // connection build up
         this.connection = await dbService(mongoURI, mongoOpt, this.dbName);
+        // setting up model based on connection
         await this.setupModels();
 
         logInfoDetails({ message: `${this.dbName} database connected` });
     };
 
-    setupModels = async () => {
-        this.studentModel = this.connection.model(MODEL_DCS.STUDENT, studentSchema, MODEL_DCS.STUDENT);
+    setupModels = () => {
+        this.rewardsModel = this.connection.model(MODEL_SCHOLARSHIP.REWARDS, rewardsSchema, MODEL_SCHOLARSHIP.REWARDS);
     };
 
     getModel = async (model) => {
@@ -43,8 +45,8 @@ class ConnectionDepartment {
 
         let m = {};
         switch (model) {
-            case MODEL_DCS.STUDENT:
-                m = this.studentModel;
+            case MODEL_SCHOLARSHIP.REWARDS:
+                m = this.rewardsModel;
                 break;
             default:
                 break;
@@ -52,6 +54,7 @@ class ConnectionDepartment {
 
         return m;
     };
+
 }
 
-module.exports = ConnectionDepartment;
+module.exports = DbScholarship;

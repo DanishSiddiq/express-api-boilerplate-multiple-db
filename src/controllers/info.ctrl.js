@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { logErrDetails } from '../helper/logger';
 import { SERVICE_UNAVAILABLE, OK } from "http-status-codes";
-import { checkHealthMongoDb } from '../database-connections/connection.db';
+import { checkHealthMongoDb } from '../database-connections/db.connection';
 
 let version = '';
 
