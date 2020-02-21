@@ -1,6 +1,7 @@
 import { MONGO_CONNECTED, DB_TYPE_DEPARTMENT, DB_TYPE_SCHOLARSHIP, DB_NAME_DCS, DB_NAME_SCHOLARSHIP } from '../constants/info-constants';
 import DBDepartment from  './db.department';
 import DBScholarship from './db.scholarship';
+import {logErrDetails} from "../helper/logger";
 
 let databases = {
   [DB_NAME_DCS]: { type: DB_TYPE_DEPARTMENT, db: null },
@@ -12,16 +13,20 @@ let databases = {
  * @returns {Promise<void>}
  */
 const setupConnection = async () => {
-  for (let dbName in databases){
-    if(!databases[dbName].db){
-      databases[dbName].db = (databases[dbName].type === DB_TYPE_DEPARTMENT ? new DBDepartment(dbName) : new DBScholarship(dbName));
-    }
+  try {
+    for (let dbName in databases){
+      if(!databases[dbName].db){
+        databases[dbName].db = (databases[dbName].type === DB_TYPE_DEPARTMENT ? new DBDepartment(dbName) : new DBScholarship(dbName));
+      }
 
-    // checking connection is alive
-    if (!databases[dbName].db.connection
-        || (databases[dbName].db.connection && !databases[dbName].db.connection.readyState)){
-      await databases[dbName].db.setupConnection();
+      // checking connection is alive
+      if (!databases[dbName].db.connection
+          || (databases[dbName].db.connection && !databases[dbName].db.connection.readyState)){
+        await databases[dbName].db.setupConnection();
+      }
     }
+  } catch (err) {
+    logErrDetails({ message: 'Database is not available', error: err });
   }
 };
 
@@ -33,7 +38,7 @@ const checkHealthMongoDb = async () => {
 
   let dbConnectionState = true;
   for (let dbName in databases){
-    if(!databases[dbName].db || databases[dbName].db.connection.readyState !== 1){
+    if(!databases[dbName].db || !databases[dbName].db.connection || databases[dbName].db.connection.readyState !== 1){
       dbConnectionState = false;
       break;
     }
