@@ -3,34 +3,34 @@ import mongooseValidator from 'express-api-problem/mongoose-validator';
 
 const studentSchema = new mongoose.Schema(
     {
-            firstName: {
-                    type: String,
-                    trim: true
-            },
-            lastName: {
-                    type: String,
-                    trim: true
-            },
-            email: {
-                    type: String,
-                    required: true,
-                    unique: true,
-                    trim: true
-            },
-            registrationNumber: {
-                    type: Number,
-                    required: true
-            },
-            isEnabled: {
-                    type: Boolean,
-            }
+        firstName: {
+            type: String,
+            trim: true
+        },
+        lastName: {
+            type: String,
+            trim: true
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
+        registrationNumber: {
+            type: Number,
+            required: true
+        },
+        isEnabled: {
+            type: Boolean,
+        }
     },
     {
-            strict: false,
-            versionKey: false,
-            bufferCommands: false,
-            validateBeforeSave: true,
-            timestamps: true,
+        strict: false,
+        versionKey: false,
+        bufferCommands: false,
+        validateBeforeSave: true,
+        timestamps: true,
     },
 );
 

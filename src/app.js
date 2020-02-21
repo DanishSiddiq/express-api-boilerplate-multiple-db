@@ -62,7 +62,7 @@ const app = express();
         app.server = http.createServer(app);
         const APP_PORT = config.get('NODE_PORT', 3000);
         app.server.listen(APP_PORT, () => {
-            logInfoDetails({message: 'Express boilerplate app listening on port:', additionalData: {APP_PORT}});
+            logInfoDetails({message: `Express boilerplate app listening on port:${APP_PORT}`});
         });
     } catch (err) {
         logErrDetails({ message: 'Express boilerplate server setup failed', error: err });

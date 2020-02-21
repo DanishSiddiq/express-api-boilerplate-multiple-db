@@ -1,6 +1,6 @@
 {
   "API_ENV": "local",
-  "NODE_PORT": "5001",
+  "NODE_PORT": 3131,
   "MONGO_DSN_DCS": "mongodb://192.168.99.100:37017/dcs",
   "MONGO_OPT_DCS": {
     "poolSize": 5,

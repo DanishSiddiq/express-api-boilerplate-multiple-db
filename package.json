@@ -1,5 +1,5 @@
 {
-  "name": "express-api-boilerplate",
+  "name": "express-api-boilerplate-multiple-database",
   "version": "1.0.0",
   "description": "express framework based boilerplate",
   "main": "app.js",
@@ -10,20 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanishSiddiq/express-api-boilerplate.git"
+    "url": "https://github.com/DanishSiddiq/express-api-boilerplate-multiple-db.git"
   },
   "keywords": [
     "express",
     "nodejs",
     "framework",
-    "boilerplate"
+    "boilerplate",
+    "multiple-databases"
   ],
   "author": "Danish Siddiq",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DanishSiddiq/express-api-boilerplate/issues"
+    "url": "https://github.com/DanishSiddiq/express-api-boilerplate-multiple-db/issues"
   },
-  "homepage": "https://github.com/DanishSiddiq/express-api-boilerplate#readme",
+  "homepage": "https://github.com/DanishSiddiq/express-api-boilerplate-multiple-db#readme",
   "dependencies": {
     "amqplib": "0.5.3",
     "body-parser": "^1.19.0",
