@@ -34,7 +34,7 @@ const app = express();
         if (process.env.NODE_ENV !== 'test') {
 
             // setup multiple connections
-            setupConnection();
+            await setupConnection();
 
             // queue listener
             // initiateRabbitMQ();

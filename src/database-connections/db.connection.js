@@ -1,11 +1,11 @@
-import { MONGO_CONNECTED, DB_TYPE_DEPARTMENT, DB_TYPE_SCHOLARSHIP, DB_NAME_DCS, DB_NAME_SCHOLARSHIP } from '../constants/info-constants';
+import { MONGO_CONNECTED, DB_NAME_DCS, DB_NAME_SCHOLARSHIP } from '../constants/info-constants';
 import DBDepartment from  './db.department';
 import DBScholarship from './db.scholarship';
 import {logErrDetails} from "../helper/logger";
 
 let databases = {
-  [DB_NAME_DCS]: { type: DB_TYPE_DEPARTMENT, db: null },
-  [DB_NAME_SCHOLARSHIP]: { type: DB_TYPE_SCHOLARSHIP, db: null },
+  [DB_NAME_DCS]         : { db: null },
+  [DB_NAME_SCHOLARSHIP] : { db: null },
 };
 
 /**
@@ -15,13 +15,23 @@ let databases = {
 const setupConnection = async () => {
   try {
     for (let dbName in databases){
-      if(!databases[dbName].db){
-        databases[dbName].db = (databases[dbName].type === DB_TYPE_DEPARTMENT ? new DBDepartment(dbName) : new DBScholarship(dbName));
+      if (!databases[dbName].db){
+        switch (dbName) {
+          case DB_NAME_DCS:
+            databases[dbName].db = new DBDepartment(dbName);
+            break;
+          case DB_NAME_SCHOLARSHIP:
+            databases[dbName].db = new DBScholarship(dbName);
+            break;
+          default:
+            break;
+        }
       }
 
-      // checking connection is alive
-      if (!databases[dbName].db.connection
-          || (databases[dbName].db.connection && !databases[dbName].db.connection.readyState)){
+      // checking connection is alive but db should have been created above
+      if (databases[dbName].db &&
+          (!databases[dbName].db.connection
+              || (databases[dbName].db.connection && !databases[dbName].db.connection.readyState))){
         await databases[dbName].db.setupConnection();
       }
     }

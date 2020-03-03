@@ -1,4 +1,3 @@
-import { config } from '../helper/config';
 import { logInfoDetails } from '../helper/logger';
 import { dbService } from './db.mongo';
 import { studentSchema } from '../models/student/student-schema';
@@ -19,11 +18,7 @@ class DbDepartment {
 
     setupConnection = async () => {
 
-        const mongoOptions  = config.get(`MONGO_OPT_${this.dbName}`, { poolSize: 5, useNewUrlParser: true });
-        const mongoOpt      = typeof mongoOptions === 'string' ? JSON.parse(mongoOptions) : mongoOptions;
-        const mongoURI      = config.get(`MONGO_DSN_${this.dbName}`, '');
-
-        this.connection = await dbService(mongoURI, mongoOpt, this.dbName);
+        this.connection = await dbService(this.dbName);
         await this.setupModels();
 
         logInfoDetails({ message: `${this.dbName} database connected` });
