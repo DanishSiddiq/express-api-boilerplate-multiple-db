@@ -50,7 +50,6 @@ const checkHealthMongoDb = async () => {
   for (let dbName in databases){
     if(!databases[dbName].db || !databases[dbName].db.connection || databases[dbName].db.connection.readyState !== 1){
       dbConnectionState = false;
-      break;
     }
   }
 
