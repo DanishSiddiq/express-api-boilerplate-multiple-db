@@ -25,51 +25,28 @@ import ExceptionHandlerMiddleware from './middlewares/exception-handler';
 const app = express();
 
 (async function() {
-    try {
-
-        handleUncaughtErrors();
-        handleExit();
-
         // Connect to multiple DB's
-        if (process.env.NODE_ENV !== 'test') {
+    if (process.env.NODE_ENV !== 'test') {
 
-            // setup multiple connections
-            await setupConnection();
+        // setup multiple connections
+        await setupConnection();
 
-            // queue listener
-            // initiateRabbitMQ();
-        }
-
-        // helmet for security purpose
-        app.use(helmet());
-        app.disable('x-powered-by');
-
-        // logger
-        app.use(morgan('tiny'));
-        app.use(bodyParser.urlencoded({ extended: true }));
-        app.use(bodyParser.json({ limit: '5mb' }));
-
-        // defining routes inside router or further distribution based on modules
-        app.use('/', routerHealth);
-        app.use('/', ConfigLoaderMiddleware, routerStudent);
-        app.use('/', ConfigLoaderMiddleware, routerRewards);
-
-        // RouteNotFound and ExceptionHandler middle-wares must
-        // be the last ones to be registered
-        app.use(RouteNotFoundMiddleware);
-        app.use(ExceptionHandlerMiddleware);
-
-        app.server = http.createServer(app);
-        const APP_PORT = config.get('NODE_PORT', 3000);
-        app.server.listen(APP_PORT, () => {
-            logInfoDetails({message: `Express boilerplate app listening on port:${APP_PORT}`});
-        });
-    } catch (err) {
-        logErrDetails({ message: 'Express boilerplate server setup failed', error: err });
-        process.exit(1);
+        // queue listener
+        // initiateRabbitMQ();
     }
-})();
 
+    app
+    .disable('x-powered-by')
+    .use(helmet()) // helmet for security purpose
+    .use(morgan('tiny')) // for logging
+    .use(bodyParser.urlencoded({ extended: true }))
+    .use(bodyParser.json({ limit: '5mb' }))
+    .use('/', routerHealth)
+    .use('/', ConfigLoaderMiddleware, routerStudent)
+    .use('/', ConfigLoaderMiddleware, routerRewards)
+    .use(RouteNotFoundMiddleware) // RouteNotFound middle-wares must
+    .use(ExceptionHandlerMiddleware); // ExceptionHandler will be the last one to be registered
+})();
 
 
 module.exports = app;
