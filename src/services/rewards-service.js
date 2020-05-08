@@ -8,8 +8,9 @@ import Repository from '../models/data-access/repository';
  * @returns {Promise<document>}
  */
 const createOne = async (data) => {
-    const rewardsModel  = await getDB(DB_NAME_SCHOLARSHIP).getModel(MODEL_SCHOLARSHIP.REWARDS);
-    const repository    = new Repository(rewardsModel);
+    const db = await getDB(DB_NAME_SCHOLARSHIP);
+    const rewardsModel = await db.getModel(MODEL_SCHOLARSHIP.REWARDS);
+    const repository = new Repository(rewardsModel);
     return repository.createOne(data);
 };
 

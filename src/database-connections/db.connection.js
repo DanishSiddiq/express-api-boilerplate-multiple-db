@@ -70,13 +70,13 @@ const checkHealthMongoDb = async () => {
  * @param dbName
  * @returns {null|number|IDBDatabase|DbDepartment|DbScholarship}
  */
-const getDB = (dbName) => {
+const getDB = async (dbName) => {
   if(databases[dbName].db){
     return databases[dbName].db;
   }
 
   // if database was not setup in server setup
-  setupConnection();
+  await setupConnection();
 
   return null;
 };

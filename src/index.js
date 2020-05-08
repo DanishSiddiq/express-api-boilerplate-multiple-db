@@ -4,16 +4,21 @@ import http from 'http';
 import { config } from './helper/config';
 import { handleExit, handleUncaughtErrors } from './helper/fatal';
 import { logInfoDetails, logErrDetails } from './helper/logger';
+import { configureServer } from './app';
 
-const app = require('./app');
+let app;
 (async function() {
     try {
 
+        // configure server
+        app = await configureServer();
+
+        // configure exceptions
         handleUncaughtErrors();
         handleExit();
 
+        // start server
         const APP_PORT = config.get('NODE_PORT', 3000);
-
         app.server = http.createServer(app);
         app
            .server

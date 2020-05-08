@@ -22,9 +22,10 @@ import ConfigLoaderMiddleware from './middlewares/config-loader';
 import RouteNotFoundMiddleware from './middlewares/not-found';
 import ExceptionHandlerMiddleware from './middlewares/exception-handler';
 
-const app = express();
+const configureServer = async () => {
 
-(async function() {
+    const app = express();
+
         // Connect to multiple DB's
     if (process.env.NODE_ENV !== 'test') {
 
@@ -46,8 +47,10 @@ const app = express();
     .use('/', ConfigLoaderMiddleware, routerRewards)
     .use(RouteNotFoundMiddleware) // RouteNotFound middle-wares must
     .use(ExceptionHandlerMiddleware); // ExceptionHandler will be the last one to be registered
-})();
 
 
-module.exports = app;
+    return app;
+};
+
+module.exports = { configureServer };
 

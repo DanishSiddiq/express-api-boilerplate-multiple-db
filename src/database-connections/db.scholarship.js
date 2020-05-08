@@ -18,25 +18,46 @@ class DbScholarship {
 
     setupConnection = async () => {
 
+        // reset models
+        await this.resetModels();
+
         // connection build up
         this.connection = await dbService(this.dbName);
-        // setting up model based on connection
-        await this.setupModels();
-
         logInfoDetails({ message: `${this.dbName} database connected` });
     };
+
+    /**
+    * reset all models
+    */
+    resetModels = async () => {
+        this.rewardsModel = null;
+    }
 
     setupModels = () => {
         this.rewardsModel = this.connection.model(MODEL_SCHOLARSHIP.REWARDS, rewardsSchema, MODEL_SCHOLARSHIP.REWARDS);
     };
 
+    /**
+     * connection state is ready
+     */
+    isConnectionReady = async () => {
+        return this.connection && this.connection.readyState;
+    }
+
     getModel = async (model) => {
 
         // before returning model, also verify that connection is available and ready
         // if not then create one
-        if (!this.connection || !this.connection.readyState) {
+        if (!(await this.isConnectionReady())) {
             await this.setupConnection();
         }
+
+        // only setup when connection is ready
+        // retry logic can be applied here
+        if (await this.isConnectionReady()) {
+            await this.setupModels();
+        }
+
 
         let m = {};
         switch (model) {
