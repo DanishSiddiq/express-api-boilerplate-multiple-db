@@ -8,8 +8,9 @@ import Repository from '../models/data-access/repository';
  * @returns {Promise<document>}
  */
 const createOne = async (data) => {
-    const studentModel  = await getDB(DB_NAME_DCS).getModel(MODEL_DCS.STUDENT);
-    const repository    = new Repository(studentModel);
+    const db = await getDB(DB_NAME_DCS);
+    const studentModel = await db.getModel(MODEL_DCS.STUDENT);
+    const repository = new Repository(studentModel);
     return repository.createOne(data);
 };
 
@@ -20,8 +21,9 @@ const createOne = async (data) => {
  * @returns {Promise<Query|*>}
  */
 const updateOne = async (whereClause, data) => {
-    const studentModel  = await getDB(DB_NAME_DCS).getModel(MODEL_DCS.STUDENT);
-    const repository    = new Repository(studentModel);
+    const db = await getDB(DB_NAME_DCS);
+    const studentModel = await db.getModel(MODEL_DCS.STUDENT);
+    const repository = new Repository(studentModel);
     return repository.updateOne({ ...whereClause, _id: whereClause._id }, data);
 };
 
@@ -32,8 +34,9 @@ const updateOne = async (whereClause, data) => {
  * @returns {Promise<Promise<*>|Query|void|Promise<*|undefined>>}
  */
 const findOne = async (whereClause, projection = {}) => {
-    const studentModel  = await getDB(DB_NAME_DCS).getModel(MODEL_DCS.STUDENT);
-    const repository    = new Repository(studentModel);
+    const db = await getDB(DB_NAME_DCS);
+    const studentModel = await db.getModel(MODEL_DCS.STUDENT);
+    const repository = new Repository(studentModel);
     return repository.findOne({ ...whereClause, _id: whereClause._id }, projection);
 };
 
